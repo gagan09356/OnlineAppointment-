@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Appointment_Detail" table="APPOINTMENT_DETAIL">
+        <id name="appointment_id" type="int">
+            <column name="APPOINTMENT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="patient_name" type="java.lang.String">
+            <column name="PATIENT_NAME" />
+        </property>
+        <property name="patient_email" type="java.lang.String">
+            <column name="PATIENT_EMAIL" />
+        </property>
+        <property name="patient_mobile" type="java.lang.String">
+            <column name="PATIENT_MOBILE" />
+        </property>
+        <property name="appointment_date" type="java.util.Date">
+            <column name="APPOINTMENT_DATE" />
+        </property>
+        <property name="appointment_time" type="java.util.Date">
+            <column name="APPOINTMENT_TIME" />
+        </property>
+        <many-to-one name="user_Info" class="com.model.User_Info" fetch="join">
+            <column name="USER_INFO" />
+        </many-to-one>
+        <many-to-one name="doctor_Detail" class="com.model.Doctor_Detail" fetch="join">
+            <column name="DOCTOR_DETAIL" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

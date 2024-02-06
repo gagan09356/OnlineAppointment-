@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Labrotary" table="LABROTARY">
+        <id name="LabTest_id" type="int">
+            <column name="LABTEST_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="LabTest_name" type="java.lang.String">
+            <column name="LABTEST_NAME" />
+        </property>
+        <property name="LabTest_desc" type="java.lang.String">
+            <column name="LABTEST_DESC" />
+        </property>
+        <property name="LabTest_price" type="java.lang.Double">
+            <column name="LABTEST_PRICE" />
+        </property>
+        <property name="Pre_info" type="java.lang.String">
+            <column name="PRE_INFO" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Diseases" table="DISEASES">
+        <id name="dis_id" type="int">
+            <column name="DIS_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="dis_name" type="java.lang.String">
+            <column name="DIS_NAME" />
+        </property>
+        <property name="dis_discription" type="java.lang.String">
+            <column name="DIS_DISCRIPTION" />
+        </property>
+        <property name="dis_symptoms" type="java.lang.String">
+            <column name="DIS_SYMPTOMS" />
+        </property>
+        <property name="dis_diagnosis" type="java.lang.String">
+            <column name="DIS_DIAGNOSIS" />
+        </property>
+        <many-to-one name="doctor_Department" class="com.model.Doctor_Department" fetch="join">
+            <column name="DOCTOR_DEPARTMENT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

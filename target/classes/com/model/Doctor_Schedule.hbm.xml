@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Doctor_Schedule" table="DOCTOR_SCHEDULE">
+        <id name="doctor_schedule_id" type="int">
+            <column name="DOCTOR_SCHEDULE_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="doctor_Detail" class="com.model.Doctor_Detail" fetch="join">
+            <column name="DOCTOR_DETAIL" />
+        </many-to-one>
+        <property name="time_start" type="java.sql.Time">
+            <column name="TIME_START" />
+        </property>
+        <property name="time_end" type="java.sql.Time">
+            <column name="TIME_END" />
+        </property>
+        <one-to-one name="schedule_Day" class="com.model.Doctor_Schedule_Day"></one-to-one>
+    </class>
+</hibernate-mapping>

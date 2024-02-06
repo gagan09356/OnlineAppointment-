@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Doctor_Detail" table="DOCTOR_DETAIL">
+        <id name="doctor_id" type="int">
+            <column name="DOCTOR_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="doctor_name" type="java.lang.String">
+            <column name="DOCTOR_NAME" />
+        </property>
+        <property name="doctor_specialization" type="java.lang.String" access="field">
+            <column name="DOCTOR_SPECIALIZATION" />
+        </property>
+        <property name="doctor_experience" type="int" access="field">
+            <column name="DOCTOR_EXPERIENCE" />
+        </property>
+        <property name="doctor_mobile" type="java.lang.String">
+            <column name="DOCTOR_MOBILE" />
+        </property>
+        <property name="doctor_email" type="java.lang.String">
+            <column name="DOCTOR_EMAIL" />
+        </property>
+        <property name="doctor_address" type="java.lang.String">
+            <column name="DOCTOR_ADDRESS" />
+        </property>
+        <property name="photo" type="java.sql.Blob">
+            <column name="PHOTO" />
+        </property>
+        <many-to-one name="doctor_department" class="com.model.Doctor_Department" fetch="join">
+            <column name="DOCTOR_DEPARTMENT" />
+        </many-to-one>
+        <list name="doctor_Schedule" inverse="false" table="DOCTOR_SCHEDULE" lazy="true" access="field">
+            <key>
+                <column name="DOCTOR_ID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.model.Doctor_Schedule" />
+        </list>
+        <list name="appointment_Detail" inverse="false" table="APPOINTMENT_DETAIL" lazy="true" access="field">
+            <key>
+                <column name="DOCTOR_ID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.model.Appointment_Detail" />
+        </list>
+    </class>
+</hibernate-mapping>

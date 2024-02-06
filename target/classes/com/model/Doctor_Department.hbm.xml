@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Doctor_Department" table="DOCTOR_DEPARTMENT">
+        <id name="doctor_department_id" type="int">
+            <column name="DOCTOR_DEPARTMENT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="department_name" type="java.lang.String">
+            <column name="DEPARTMENT_NAME" />
+        </property>
+        <property name="department_discription" type="java.lang.String">
+            <column name="DEPARTMENT_DISCRIPTION" />
+        </property>
+        <list name="doctor_Detail" inverse="false" table="DOCTOR_DETAIL" lazy="true" access="field">
+            <key>
+                <column name="DOCTOR_DEPARTMENT_ID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.model.Doctor_Detail" />
+        </list>
+    </class>
+</hibernate-mapping>

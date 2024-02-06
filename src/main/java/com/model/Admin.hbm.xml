@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jan, 2020 9:53:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.Admin" table="ADMIN">
+        <id name="admin_id" type="int">
+            <column name="ADMIN_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="admin_name" type="java.lang.String">
+            <column name="ADMIN_NAME" />
+        </property>
+        <property name="admin_email_id" type="java.lang.String">
+            <column name="ADMIN_EMAIL_ID" />
+        </property>
+        <property name="admin_password" type="java.lang.String">
+            <column name="ADMIN_PASSWORD" />
+        </property>
+    </class>
+</hibernate-mapping>
